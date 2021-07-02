@@ -4,7 +4,7 @@ from kivy.core.window import Window
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.button import MDFlatButton
 
-Window.size = (360, 540)
+Window.size = (360, 640)
 
 class Tela(MDBoxLayout):
     def __init__(self, **kwargs):
@@ -12,8 +12,8 @@ class Tela(MDBoxLayout):
 
 class Calculadora(MDApp):
     def build(self):
-        self.theme_cls.primary_palette = "Green"
-        self.theme_cls.primary_hue = "A400"
+        self.theme_cls.primary_palette = "Red"
+        self.theme_cls.primary_hue = "900"
         print(self.theme_cls.primary_color)
         return Tela()
 
