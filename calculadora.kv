@@ -2,9 +2,14 @@
     orientation: "vertical"
     MDFloatLayout:
         MDLabel:
+            id: valor_operado
+            pos_hint: {"center_x": .5, "center_y":.5}
+            text: ""
+            font_size: 32
+        MDLabel:
             id: numeros
             pos_hint: {"center_x": .5, "center_y":.15}
-            text: "0"
+            text: ""
             font_size: 32
 
     MDBoxLayout:
@@ -27,12 +32,16 @@
                     text: "/"
                     font_size: 32
                     size_hint_x: .025
-                    on_release: root.ids.numeros.text = root.validando_operador('/', root.ids.numeros.text)
+                    on_release:
+                        root.ids.valor_operado.text = root.ids.numeros.text+" /"
+                        root.ids.numeros.text = " "
                 MDFlatButton:
                     text: "*"
                     font_size: 32
                     size_hint_x: .025
-                    on_release: root.ids.numeros.text = root.validando_operador('*', root.ids.numeros.text)
+                    on_release:
+                        root.ids.valor_operado.text = root.ids.numeros.text+" *"
+                        root.ids.numeros.text = " "
             MDBoxLayout:
                 adaptive_height: True
                 MDFlatButton:
@@ -113,15 +122,19 @@
             MDFlatButton:
                 text: "+"
                 font_size: 36
-                on_release: root.ids.numeros.text = root.validando_operador('+', root.ids.numeros.text)
+                on_release:
+                    root.ids.valor_operado.text = root.verifica_operador("+")
+                    root.ids.numeros.text = " "
             MDFlatButton:
                 text: "-"
                 font_size: 36
-                on_release: root.ids.numeros.text = root.validando_operador('-', root.ids.numeros.text)
+                on_release:
+                    root.ids.valor_operado.text = root.verifica_operador("-")
+                    root.ids.numeros.text = " "
             MDFlatButton:
                 text: "="
                 theme_text_color: "Custom"
                 text_color: 0.12941176470588237, 0.5882352941176471, 0.9529411764705882, 1.0
                 font_size: 36
                 size_hint_y: .5
-                on_release: root.ids.numeros.text = root.somar_conta(root.ids.numeros.text)
+                on_release: root.ids.numeros.text = root.calcular()

@@ -15,10 +15,39 @@ class Tela(MDBoxLayout):
             return conta
         return conta+operador
 
-    def somar_conta(self, conta):
-        operadores = {"*":0, "/":0, "+":0, "-":0,}
-        def separar_numeros(numero):
-            ...
+    def verifica_operador(self, operador):
+        if self.ids.valor_operado.text=="":
+            return self.ids.numeros.text+ F" {operador}"
+        return self.calcular(operador)
+
+    def calcular(self, operador=""):
+        valor_total = 0
+        valor_operado = self.ids.valor_operado.text
+        valor_atual = self.ids.numeros.text
+
+        if self.ids.valor_operado.text == "":
+            self.ids.valor_operado.text = "0"
+        if self.ids.numeros.text == "":
+            self.ids.numeros.text = "0"
+
+        if self.ids.valor_operado.text[-1] == "/":
+            valor_operado = self.ids.valor_operado.text.replace(" /", "")
+            valor_total = float(valor_operado) / float(valor_atual)
+
+        if self.ids.valor_operado.text[-1] == "*":
+            valor_operado = self.ids.valor_operado.text.replace(" *", "")
+            valor_total = float(valor_operado) * float(valor_atual)
+
+        if self.ids.valor_operado.text[-1] == "+":
+            valor_operado = self.ids.valor_operado.text.replace(" +", "")
+            valor_total = float(valor_operado) + float(valor_atual)
+
+        if self.ids.valor_operado.text[-1] == "-":
+            valor_operado = self.ids.valor_operado.text.replace(" -", "")
+            valor_total = float(valor_operado) - float(valor_atual)
+        return F"{valor_total} {operador}"
+
+
 
 
 
