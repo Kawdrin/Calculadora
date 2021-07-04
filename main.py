@@ -2,9 +2,13 @@ from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.core.window import Window
 from kivymd.uix.boxlayout import MDBoxLayout
+from kivymd.uix.floatlayout import MDFloatLayout
+from kivymd.uix.dialog import MDDialog
+from kivymd.uix.list import OneLineListItem
 from kivymd.uix.button import MDFlatButton
 
 Window.size = (360, 540)
+
 
 class Tela(MDBoxLayout):
     def __init__(self, **kwargs):
@@ -16,40 +20,51 @@ class Tela(MDBoxLayout):
         return conta+operador
 
     def verifica_operador(self, operador):
-        if self.ids.valor_operado.text=="":
+        if self.ids.numeros.text == "":
+            return self.ids.valor_operado.text
+        if self.ids.valor_operado.text=="" or self.ids.valor_operado.text[-1] not in ["*", "/", "+", "-"]:
             return self.ids.numeros.text+ F" {operador}"
-        return self.calcular(operador)
+        return self.calcular(F" {operador}")
 
-    def calcular(self, operador=""):
-        valor_total = 0
-        valor_operado = self.ids.valor_operado.text
-        valor_atual = self.ids.numeros.text
-
-        if self.ids.valor_operado.text == "":
-            self.ids.valor_operado.text = "0"
+    def verifica_real(self):
+        numero_atual = self.ids.numeros.text
         if self.ids.numeros.text == "":
             self.ids.numeros.text = "0"
+        if "," in numero_atual:
+            return self.ids.numeros.text
+        return self.ids.numeros.text+","
 
-        if self.ids.valor_operado.text[-1] == "/":
-            valor_operado = self.ids.valor_operado.text.replace(" /", "")
-            valor_total = float(valor_operado) / float(valor_atual)
+    def puxar_conta_do_historico(self):
+        ...
 
-        if self.ids.valor_operado.text[-1] == "*":
-            valor_operado = self.ids.valor_operado.text.replace(" *", "")
-            valor_total = float(valor_operado) * float(valor_atual)
+    def calcular(self, operador="", click=False):
+        valor_total = 0
+        valor_operado = self.ids.valor_operado.text.replace(",", ".")
+        valor_atual = self.ids.numeros.text.replace(",", ".")
 
-        if self.ids.valor_operado.text[-1] == "+":
-            valor_operado = self.ids.valor_operado.text.replace(" +", "")
-            valor_total = float(valor_operado) + float(valor_atual)
+        if self.ids.valor_operado.text != "" and self.ids.numeros.text != "" and  self.ids.valor_operado.text[-1] in ["*", "/", "+", "-"]:
+            if self.ids.valor_operado.text[-1] == "/":
+                valor_operado = valor_operado.replace(" /", "")
+                valor_total = float(valor_operado) / float(valor_atual)
 
-        if self.ids.valor_operado.text[-1] == "-":
-            valor_operado = self.ids.valor_operado.text.replace(" -", "")
-            valor_total = float(valor_operado) - float(valor_atual)
-        return F"{valor_total} {operador}"
+            if self.ids.valor_operado.text[-1] == "*":
+                valor_operado = valor_operado.replace(" *", "")
+                valor_total = float(valor_operado) * float(valor_atual)
 
+            if self.ids.valor_operado.text[-1] == "+":
+                valor_operado = valor_operado.replace(" +", "")
+                valor_total = float(valor_operado) + float(valor_atual)
 
+            if self.ids.valor_operado.text[-1] == "-":
+                valor_operado = valor_operado.replace(" -", "")
+                valor_total = float(valor_operado) - float(valor_atual)
+            self.ids.lista_do_historico.add_widget(LinhaDoHistorico(text=F"{self.ids.valor_operado.text} {self.ids.numeros.text} = {valor_total}"))
+            return F"{valor_total}{operador}"
+        return self.ids.valor_operado.text
 
-
+class LinhaDoHistorico(OneLineListItem):
+    def __init__(self, **kargs):
+        super().__init__(**kargs)
 
 class Calculadora(MDApp):
     def build(self):
@@ -57,5 +72,7 @@ class Calculadora(MDApp):
         self.theme_cls.primary_hue = "500"
         print(self.theme_cls.primary_color)
         return Tela()
+
+
 
 Calculadora().run()
