@@ -1,7 +1,9 @@
-# SimpleCalc
+<h1 align="center">
+  <img alt="Calculadora" title="Calculadora" src="./github/demo.gif">
+</h1>
 <p align="center">Esse projeto foi feito em Kivy/KivyMD, para testar funcionalidades do mesmo.</p>
 <p align="center">
-  [Sobre]("#sobre"]
+  <a href="#sobre">Sobre</a> •
   <a href="#tecnologias">Tecnologias</a> •
   <a href="#pré-requisitos">Pré Requisitos</a> •
   <a href="#licença">Licença</a> •
@@ -10,15 +12,15 @@
 
 ## 📄 Sobre
   Aplicativo feito com Kivy e KivyMD, com intuito de testar funcionalidades do KivyMD e aprender um pouco mais de programação.
-  
+
 ## ⚙️ Tecnologias
   - [**Python 3.+**](https://www.python.org/)
   - [**Kivy**](https://kivy.org/#home)
   - [**KivyMD**](https://kivymd.readthedocs.io/en/latest/getting-started/)
-  
+
 ## 📜 Pré Requisitos
   Antes de continuar você precisa ter instalado em sua maquina as [**tecnologias**](#Tecnologias) citadas a cima.
- 
+
  🎲 Rodando o Aplicativo
 
 ```bash
