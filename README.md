@@ -1,27 +1,24 @@
 # SimpleCalc
-<h1 align="center">
-  <img alt="Calculadora" title="Calculadora" src="./github/demo.gif">
-</h1>
 <p align="center">Esse projeto foi feito em Kivy/KivyMD, para testar funcionalidades do mesmo.</p>
 <p align="center">
-  <a href="#Sobre">Sobre</a> •
-  <a href="#Tecnologias">Tecnologias</a> •
-  <a href="#Pré-Requisitos">Pré Requisitos</a> •
-  <a href="#Licença">Licença</a> •
-  <a href="#Autor">Autor</a>
+  <a href="#sobre">Sobre</a> •
+  <a href="#tecnologias">Tecnologias</a> •
+  <a href="#pré-requisitos">Pré Requisitos</a> •
+  <a href="#licença">Licença</a> •
+  <a href="#autor">Autor</a>
 </p>
 
 ## 📄 Sobre
   Aplicativo feito com Kivy e KivyMD, com intuito de testar funcionalidades do KivyMD e aprender um pouco mais de programação.
-
+  
 ## ⚙️ Tecnologias
   - [Python 3.+](https://www.python.org/)
   - [Kivy](https://kivy.org/#home)
   - [KivyMD](https://kivymd.readthedocs.io/en/latest/getting-started/)
-
+  
 ## 📜 Pré Requisitos
-  Antes de continuar você precisa ter instalado em sua maquina as [tecnologias](#Tecnologias) citadas a cima.
-
+  Antes de continuar você precisar ter instalado em sua maquina as [tecnologias](#Tecnologias) citadas a cima.
+ 
  🎲 Rodando o Aplicativo
 
 ```bash
@@ -58,5 +55,4 @@
     FORA DE OU EM CONEXÃO COM O SOFTWARE OU O USO OU OUTRAS NEGOCIAÇÕES NO
     PROGRAMAS.
 ## 👋 Autor
- ![Link Badge](https://img.shields.io/badge/-Feito%20POR-7AA5FF?&style=for-the-badge&logoColor=white)
-  [![Link Badge](https://img.shields.io/badge/-Kawan%20Henrique%20Pereira-7AA5FF?&style=for-the-badge&logoColor=white&logo=linkedin)](https://www.linkedin.com/in/kawan-henrique-pereira/)
+ Feito por [Kawan Henrique](https://www.linkedin.com/in/kawan-henrique-pereira/)
