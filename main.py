@@ -1,11 +1,13 @@
+from kivy.config import Config
+
+Config.set('graphics', 'resizable',False)
+
 from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.core.window import Window
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.floatlayout import MDFloatLayout
-from kivymd.uix.dialog import MDDialog
 from kivymd.uix.list import OneLineListItem
-from kivymd.uix.button import MDFlatButton
 
 Window.size = (360, 540)
 
@@ -70,7 +72,6 @@ class Calculadora(MDApp):
     def build(self):
         self.theme_cls.primary_palette = "Red"
         self.theme_cls.primary_hue = "500"
-        print(self.theme_cls.primary_color)
         return Tela()
 
 
