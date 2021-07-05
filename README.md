@@ -1,7 +1,7 @@
 # SimpleCalc
 <p align="center">Esse projeto foi feito em Kivy/KivyMD, para testar funcionalidades do mesmo.</p>
 <p align="center">
-  <a href="#sobre">Sobre</a> •
+  [Sobre]("#sobre"]
   <a href="#tecnologias">Tecnologias</a> •
   <a href="#pré-requisitos">Pré Requisitos</a> •
   <a href="#licença">Licença</a> •
@@ -12,20 +12,20 @@
   Aplicativo feito com Kivy e KivyMD, com intuito de testar funcionalidades do KivyMD e aprender um pouco mais de programação.
   
 ## ⚙️ Tecnologias
-  - [Python 3.+](https://www.python.org/)
-  - [Kivy](https://kivy.org/#home)
-  - [KivyMD](https://kivymd.readthedocs.io/en/latest/getting-started/)
+  - [**Python 3.+**](https://www.python.org/)
+  - [**Kivy**](https://kivy.org/#home)
+  - [**KivyMD**](https://kivymd.readthedocs.io/en/latest/getting-started/)
   
 ## 📜 Pré Requisitos
-  Antes de continuar você precisar ter instalado em sua maquina as [tecnologias](#Tecnologias) citadas a cima.
+  Antes de continuar você precisa ter instalado em sua maquina as [**tecnologias**](#Tecnologias) citadas a cima.
  
  🎲 Rodando o Aplicativo
 
 ```bash
-# Clone o repositorio do projeto
+# Clone o repositório do projeto
 > git clone https://github.com/Kawdrin/Calculadora.git
 
-# Entre na pasta do repositorio
+# Entre na pasta do repositório
 > cd Calculadora
 
 # Execute o app com python
@@ -55,4 +55,5 @@
     FORA DE OU EM CONEXÃO COM O SOFTWARE OU O USO OU OUTRAS NEGOCIAÇÕES NO
     PROGRAMAS.
 ## 👋 Autor
- Feito por [Kawan Henrique](https://www.linkedin.com/in/kawan-henrique-pereira/)
+ ![Link Badge](https://img.shields.io/badge/-Feito%20POR-7AA5FF?&style=for-the-badge&logoColor=white)
+  [![Link Badge](https://img.shields.io/badge/-Kawan%20Henrique%20Pereira-7AA5FF?&style=for-the-badge&logoColor=white&logo=linkedin)](https://www.linkedin.com/in/kawan-henrique-pereira/)
